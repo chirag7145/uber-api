@@ -1,0 +1,33 @@
+- config:
+    - testset: "Quickstart api tests"
+
+- test:
+    - group: "Quickstart"
+    - name: "Basic smoketest"
+    - url: "http://localhost:8000/UserApi/UserApi/"
+
+- test:
+    - group: "Quickstart"
+    - name: "Basic smoketest"
+    - url: "http://localhost:8000/DriverApi/DriverApi/"
+    # - method: "POST"
+    # - body: '{"name": "Registers", "category_name": "Stationary", "description": "Classmates, 300pages","buy_price": 45,"sell_price": 70,"quantity": 3}'
+    # - headers: {'Content-Type': 'application/json'}
+- test:
+    - group: "Quickstart"
+    - name: "Create an user"
+    - url: "http://localhost:8000/UserApi/UserApi/user/"
+    - method: "PUT"
+    - body: '{"name": "Shubham", "username": "shubhi", "phone_no": 7783738783, "start_lattitude": 34.4, "start_longitude": 57.9, "end_lattitude": 12.07, "end_longitude": 73.6, }'
+    - headers: {'Content-Type': 'application/json'}
+
+# - test:
+#     - group: "Quickstart"
+#     - name: "Checking our new product"
+#     - url: "http://localhost:8000/ecommerce/9/"
+#
+- test:
+    - group: "Quickstart"
+    - name: "Delete the latest user"
+    - url: "http://localhost:8000/UserApi/UserApi/user/1/"
+    - method: 'DELETE'
